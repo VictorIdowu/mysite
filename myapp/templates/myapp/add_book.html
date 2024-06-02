@@ -1,0 +1,69 @@
+{% extends 'myapp/base.html' %} {% block body %}
+<form
+  style="
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+    max-width: 600px;
+  "
+  method="POST"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+
+  <h2
+    style="
+      color: coral;
+      background-color: #333;
+      padding: 0.5rem 0;
+      text-align: center;
+    "
+  >
+    Add New Book
+  </h2>
+
+  <label style="display: flex; flex-direction: column" for="name"
+    >Name:
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Enter name of the book"
+    />
+  </label>
+  <label style="display: flex; flex-direction: column" for="desc"
+    >Description:
+    <input
+      type="text"
+      name="desc"
+      id="desc"
+      placeholder="Enter description of the book"
+    />
+  </label>
+  <label style="display: flex; flex-direction: column" for="price"
+    >Price:
+    <input
+      type="text"
+      name="price"
+      id="price"
+      placeholder="Enter price of the book"
+    />
+  </label>
+  <label style="display: flex; flex-direction: column" for="book_img"
+    >Book Image:
+    <input type="file" name="book_img" id="book_img" />
+  </label>
+  <input
+    style="
+      border: none;
+      color: white;
+      background-color: coral;
+      padding: 0.5rem 0;
+      cursor: pointer;
+    "
+    type="submit"
+  />
+</form>
+{% endblock %}
